@@ -45,93 +45,88 @@ class _UpdatePasswordState extends State<UpdatePassword> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-            child: Row(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+            child: Column(
               children: [
-                Text(
-                  "Please enter your new password",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 17,
+                Row(
+                  children: [
+                    Text(
+                      "Please enter your new password",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                      ),
+                    )
+                  ],
+                ),
+                TextFormField(
+                  obscureText: true,
+                  keyboardType: TextInputType.emailAddress,
+                  cursorColor: Colors.black,
+                  style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                    labelStyle: TextStyle(color: Colors.grey),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    disabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    hoverColor: Colors.black,
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                TextFormField(
+                  obscureText: true,
+                  keyboardType: TextInputType.emailAddress,
+                  cursorColor: Colors.black,
+                  style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    labelText: "Confirm password",
+                    labelStyle: TextStyle(color: Colors.grey),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    disabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    hoverColor: Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                MaterialButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const StartShopping()),
+                    );
+                  },
+                  color: Colors.black,
+                  height: 50,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Center(
+                    child: Text(
+                      "RESET PASSWORD",
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    ),
+                  ),
+                ),
               ],
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 45),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.emailAddress,
-              cursorColor: Colors.black,
-              style: TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                labelText: "Password",
-                labelStyle: TextStyle(color: Colors.grey),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                ),
-                disabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                hoverColor: Colors.black,
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 45),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.emailAddress,
-              cursorColor: Colors.black,
-              style: TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                labelText: "Confirm password",
-                labelStyle: TextStyle(color: Colors.grey),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                ),
-                disabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                hoverColor: Colors.black,
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 55),
-            child: MaterialButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const StartShopping()),
-                );
-              },
-              color: Colors.black,
-              height: 50,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)),
-              child: Center(
-                child: Text(
-                  "RESET PASSWORD",
-                  style: TextStyle(color: Colors.white, fontSize: 17),
-                ),
-              ),
-            ),
-          ),
+          )
         ],
       ),
     );

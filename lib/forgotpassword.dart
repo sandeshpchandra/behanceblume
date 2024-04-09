@@ -40,67 +40,68 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               )
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-            child: Row(
-              children: [
-                Text(
-                  "please enter your email address and we\nwill send your password by email\nimmadiatly.",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 17,
-                  ),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 45),
-            child: TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              cursorColor: Colors.black,
-              style: TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                labelText: "Email",
-                labelStyle: TextStyle(color: Colors.grey),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                ),
-                disabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                hoverColor: Colors.black,
-              ),
-            ),
-          ),
           SizedBox(
             height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 55),
-            child: MaterialButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const UpdatePassword()),
-                );
-              },
-              color: Colors.black,
-              height: 50,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)),
-              child: Center(
-                child: Text(
-                  "SEND",
-                  style: TextStyle(color: Colors.white, fontSize: 17),
+            padding: const EdgeInsets.symmetric(horizontal: 35),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "please enter your email address and we\nwill send your password by email\nimmadiatly.",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  cursorColor: Colors.black,
+                  style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    labelText: "Email",
+                    labelStyle: TextStyle(color: Colors.grey),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    disabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    hoverColor: Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                MaterialButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const UpdatePassword()),
+                    );
+                  },
+                  color: Colors.black,
+                  height: 50,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Center(
+                    child: Text(
+                      "SEND",
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
+          )
         ],
       ),
     );

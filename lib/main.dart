@@ -54,56 +54,52 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
           ]),
-          Column(
-            children: [
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    child: Text(
-                      "SIGN IN >",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginPage()),
-                      );
-                    },
-                  )),
-              Spacer(),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 55),
-                    child: Text(
+          Align(
+              alignment: Alignment.topRight,
+              child: TextButton(
+                child: Text(
+                  "SIGN IN >",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                },
+              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 35),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Row(
+                  children: [
+                    Text(
                       "Ideal store for\nyour shopping",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 30),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Divider(
-                thickness: 1,
-                color: Colors.white,
-                endIndent: 60,
-                indent: 60,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 45),
-                child: MaterialButton(
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Divider(
+                  thickness: 1,
+                  color: Colors.white,
+                  endIndent: 20,
+                  indent: 20,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                MaterialButton(
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -125,15 +121,10 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45,
+                SizedBox(
+                  height: 10,
                 ),
-                child: SizedBox(
+                SizedBox(
                   height: 55,
                   width: double.maxFinite,
                   child: OutlinedButton.icon(
@@ -159,11 +150,11 @@ class _MainPageState extends State<MainPage> {
                             fontWeight: FontWeight.bold),
                       )),
                 ),
-              ),
-              SizedBox(
-                height: 30,
-              )
-            ],
+                SizedBox(
+                  height: 30,
+                )
+              ],
+            ),
           )
         ]),
       ),
