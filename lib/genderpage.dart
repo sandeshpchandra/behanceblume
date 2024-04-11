@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/wintercollection.dart';
 
 class GenderPage extends StatefulWidget {
   const GenderPage({super.key});
@@ -22,38 +23,31 @@ class _GenderPageState extends State<GenderPage> {
             )
           ],
         ),
-        Column(
-          children: [
-            Spacer(),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 55),
-                  child: Text(
-                    "Ideal store for\nyour shopping",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Divider(
-              thickness: 1,
-              color: Colors.white,
-              endIndent: 60,
-              indent: 60,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 70),
-              child: Row(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 60),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Spacer(),
+              Text(
+                "Ideal store for\nyour shopping",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1,
+                color: Colors.white,
+                endIndent: 50,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
                 children: [
                   SizedBox(
                     height: 60,
@@ -66,7 +60,13 @@ class _GenderPageState extends State<GenderPage> {
                         shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30))),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WinterCollection()),
+                        );
+                      },
                       child: Text(
                         "WOMEN",
                         style: TextStyle(
@@ -89,7 +89,13 @@ class _GenderPageState extends State<GenderPage> {
                               borderRadius: BorderRadius.circular(30)),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WinterCollection()),
+                        );
+                      },
                       child: Text(
                         "MEN",
                         style: TextStyle(
@@ -99,11 +105,11 @@ class _GenderPageState extends State<GenderPage> {
                   )
                 ],
               ),
-            ),
-            SizedBox(
-              height: 40,
-            )
-          ],
+              SizedBox(
+                height: 40,
+              )
+            ],
+          ),
         )
       ]),
     );

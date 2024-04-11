@@ -83,7 +83,8 @@ class _MainPageState extends State<MainPage> {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 30),
+                          fontSize: 30
+                          ),
                     ),
                   ],
                 ),

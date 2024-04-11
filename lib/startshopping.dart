@@ -19,52 +19,31 @@ class _StartShoppingState extends State<StartShopping> {
           iconTheme: IconThemeData(color: Colors.black),
           actions: []),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 60),
+        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 120),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 80),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 180,
-                    width: 180,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Image.network(
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTItYAAz_1BM34ZeBJhAP_Elc83vpU2HHxenQ&usqp=CAU"),
-                  ),
-                ],
-              ),
+            Container(
+              height: 180,
+              width: 180,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(30)),
+              child: Image.network(
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTItYAAz_1BM34ZeBJhAP_Elc83vpU2HHxenQ&usqp=CAU"),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Hello Cassie!",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                )
-              ],
+            Text(
+              "Hello Cassie!",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
             SizedBox(
               height: 10,
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Your password has been reset!",
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
+            Text(
+              "Your password has been reset!",
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 30,
