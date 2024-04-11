@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/cartpage.dart';
 
 class CategoryProduct extends StatefulWidget {
   const CategoryProduct({super.key});
@@ -73,42 +74,66 @@ class _CategoryProductState extends State<CategoryProduct> {
             child: GridView.count(
                 crossAxisCount: 2,
                 // crossAxisSpacing: 10,
-                // mainAxisSpacing: 10,
+                mainAxisSpacing: 30,
                 // padding: EdgeInsets.symmetric(horizontal: 20),
                 children: List.generate(
                   discovery.length,
                   (index) => Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(5),
-                            child: Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12)),
-                              // color: Colors.white,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    discovery[index]["image"],
-                                    fit: BoxFit.fill,
-                                    height: 200,
-                                    width: 200,
-                                  ),
-                                ],
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CartPage()),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 500,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                discovery[index]["image"],
+                                fit: BoxFit.cover,
+                                height: 152,
+                                width: 150,
                               ),
                             ),
-                          ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              discovery[index]["title"],
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.currency_rupee_outlined,
+                                  color: Colors.grey,
+                                  size: 16,
+                                ),
+                                Text(
+                                  discovery[index]["subtitle"],
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        Text(discovery[index]["title"]),
-                        Text(discovery[index]["subtitle"]),
-                      ],
+                      ),
                     ),
                   ),
                 )),
@@ -129,5 +154,45 @@ List<Map<String, dynamic>> discovery = [
     "title": "American armholes",
     "subtitle": "28",
     "image": "assets/gridimage.jpg"
+  },
+  {
+    "title": "Ramones T-shirt",
+    "subtitle": "26",
+    "image": "assets/gridimage1.jpeg"
+  },
+  {
+    "title": "Snoopy T-shirt",
+    "subtitle": "40",
+    "image": "assets/gridimage2.jpeg"
+  },
+  {
+    "title": "Printed T-shirt",
+    "subtitle": "32",
+    "image": "assets/gridimage3.jpeg"
+  },
+  {
+    "title": "Scooby T-shirt",
+    "subtitle": "34",
+    "image": "assets/gridimage4.jpeg"
+  },
+  {
+    "title": "Western T-shirt",
+    "subtitle": "36",
+    "image": "assets/gridimage5.jpeg"
+  },
+  {
+    "title": "Gypsy T-shirt",
+    "subtitle": "38",
+    "image": "assets/gridimage6.jpeg"
+  },
+  {
+    "title": "Cossak T-shirt",
+    "subtitle": "42",
+    "image": "assets/gridimage7.jpeg"
+  },
+  {
+    "title": "Sailor T-shirt",
+    "subtitle": "44",
+    "image": "assets/gridimage8.jpeg"
   }
 ];
